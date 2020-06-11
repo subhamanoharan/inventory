@@ -8,6 +8,7 @@
     "lint": "eslint src/",
     "dev": "nodemon",
     "build": "npm run clean && npm run transpile",
+    "build:fe": "cd frontend && npm run build:prod",
     "clean": "rimraf dist/",
     "transpile": "babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "db-migrate": "node node_modules/db-migrate/bin/db-migrate",
