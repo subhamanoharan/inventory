@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node dist/src/index.js",
+    "lint": "eslint src/",
     "dev": "nodemon",
     "build": "npm run clean && npm run transpile",
     "clean": "rimraf dist/",
     "transpile": "babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "db-migrate": "node node_modules/db-migrate/bin/db-migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,17 +18,30 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "db-migrate": "^0.11.11",
+    "db-migrate-pg": "^1.2.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "config": "^3.3.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.2.1"
   },
   "nodemonConfig": {
     "exec": "npm run start",
-    "watch": ["src/*"],
-    "ignore": ["*.test.js"]
+    "watch": [
+      "src/*"
+    ],
+    "ignore": [
+      "*.test.js"
+    ]
   }
 }

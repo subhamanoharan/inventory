@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "driver": "pg",
+    "user": "postgres",
+    "password": "postgres",
+    "host": "localhost",
+    "database": "inventory"
+  },
+  "test": {
+    "driver": "pg",
+    "user": "postgres",
+    "password": "postgres",
+    "host": "localhost",
+    "database": "inventory_test"
+  },
+  "production": {"ENV": "DATABASE_URL"}
+}
